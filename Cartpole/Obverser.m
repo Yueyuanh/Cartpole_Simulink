@@ -42,6 +42,7 @@ obs_poles = [-15, -16, -17, -18];
 
 % 计算观测器增益L
 L = place(A', C', obs_poles)';
+A_LC=A-L*C;
 
 fprintf('观测器增益矩阵L为:\n');
 fprintf('%10.2f\n', L);

@@ -1,2 +1,2 @@
 # Cartpole Simulink
-![matlab](Docs/img/matlab.png)
+![matlab](Docs/img/Cartpole_LQR.gif)
