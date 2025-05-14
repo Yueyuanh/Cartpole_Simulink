@@ -21,7 +21,9 @@ B = [0;
      0;
      b4];
 
-C =[1 0 0 0]; 
+C =[1 0 0 0;
+    0 0 1 0]; 
+
 
 %% ¼ÆËã¿É¿Ø¾ØÕó
 S_c = [B A*B A^2*B A^3*B];
@@ -34,8 +36,14 @@ Q_o = [C;
        C*A^3];
 fprintf('rank(Q_o) = %d\n', rank(Q_o));
 
+%%
+desired_poles = [-1, -1, -5,-5];
+K=acker(A,B,desired_poles);
+disp('K = ');
+disp(K)
+
 %% LQR
-Q = diag([500,5,1,1]);
+Q = diag([5000,5,1,1]);
 R = eye(1);
 K_lqr = lqr(A,B,Q,R);
 disp('K_lqr = ');
